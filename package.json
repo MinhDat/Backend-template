@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "NODE_ENV=development node index.js"
   },
   "engines": {
     "node": "8.11.0"
