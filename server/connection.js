@@ -17,7 +17,7 @@ Connection.main.on("connected", () => {
 });
 
 // Connection.app.on("connected", () => {
-//   console.log("Connect to database ReactJSTemplateDB success!");
+//   console.log("Connect to database OneHealthDB success!");
 // });
 
 export default Connection;

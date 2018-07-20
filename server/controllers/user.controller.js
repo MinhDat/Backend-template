@@ -8,7 +8,13 @@ const { STATUS_MESSAGES } = Constant;
 //limmit
 async function GetUsers(req, res, next) {
   try {
-    let users = await UserModel.find({});
+    let object = {};
+    if (req.headers["fitness"]) {
+      object = {
+        fitness: req.headers["fitness"]
+      };
+    }
+    let users = await UserModel.find(object);
     users = users.map(user => UserformatResponse(user));
     next({ status: 200, message: users });
   } catch (ex) {
@@ -97,7 +103,7 @@ function UserformatResponse(user) {
     "address",
     "salt",
     "accesstoken",
-    "_id",
+    // "_id",
     "avatar",
     "active",
     "devices"

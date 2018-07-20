@@ -9,7 +9,7 @@ import http from "http";
 const app = Express();
 import API from "./api/";
 
-// app.use(cors());
+app.use(cors());
 app.use((req, res, next) => {
   res.setHeader("oh_token", "*");
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -32,7 +32,7 @@ app.use("/api", API);
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 app.set("port", port);
 /**
  * Create HTTP server.
