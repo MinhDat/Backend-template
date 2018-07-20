@@ -9,7 +9,7 @@ import http from "http";
 const app = Express();
 import API from "./api/";
 
-app.use(cors());
+// app.use(cors());
 app.use((req, res, next) => {
   res.setHeader("oh_token", "*");
   res.setHeader("Access-Control-Allow-Origin", "*");
