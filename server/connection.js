@@ -5,7 +5,9 @@ const Connection = {
   main: mongoose.createConnection(serverConfig.mongoURL, {
     useNewUrlParser: true
   }),
-  app: mongoose.createConnection(serverConfig.appDbURl)
+  app: mongoose.createConnection(serverConfig.appDbURl, {
+    useNewUrlParser: true
+  })
 };
 
 // mongoose.connection;
