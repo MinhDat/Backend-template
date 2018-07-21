@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import Connection from "../connection";
 
 const Schema = mongoose.Schema;
 const RoleMapping = new Schema(
@@ -22,6 +23,8 @@ const RoleMapping = new Schema(
   { versionKey: false }
 );
 
-const RoleMappingModel = mongoose.model("roleMapping", RoleMapping);
+RoleMapping.index({ user: 1, role: 1 }, { unique: true });
+
+const RoleMappingModel = Connection.main.model("roleMapping", RoleMapping);
 
 export default RoleMappingModel;

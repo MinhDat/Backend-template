@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import PrimaryDate from "./utils/primaryDate";
+import Connection from "../connection";
 
 const Schema = mongoose.Schema;
 const Role = new Schema(
@@ -10,14 +11,7 @@ const Role = new Schema(
     },
     content: String,
     permission: {
-      type: {
-        product: {
-          c: true,
-          r: false,
-          d: false,
-          u: false
-        }
-      },
+      type: {},
       _id: false,
       required: true
     },
@@ -31,7 +25,11 @@ const Role = new Schema(
 
 // add primary date
 Role.add(PrimaryDate);
+// Role.pre("save", function(next) {
+//   console.log("here", this);
+//   next();
+// });
 
-const RoleModel = mongoose.model("roles", Role);
+const RoleModel = Connection.main.model("role", Role);
 
 export default RoleModel;
