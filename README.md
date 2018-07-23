@@ -1,4 +1,4 @@
-# backend_wefit
+# backend_react_template
 
-* npm install
-* npm start
+- npm install
+- npm start
